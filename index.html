@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Controle de Treinos</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header class="hero">
+        <h1>🏋️ Controle de Treinos</h1>
+        <p>Registre suas sessões e acompanhe sua evolução semanal.</p>
+      </header>
+
+      <section class="card">
+        <h2>Novo treino</h2>
+        <form id="training-form" class="grid-form">
+          <label>
+            Data
+            <input type="date" id="date" required />
+          </label>
+
+          <label>
+            Tipo
+            <select id="type" required>
+              <option value="">Selecione</option>
+              <option>Musculação</option>
+              <option>Cardio</option>
+              <option>Corrida</option>
+              <option>Ciclismo</option>
+              <option>Funcional</option>
+              <option>Alongamento</option>
+              <option>Outro</option>
+            </select>
+          </label>
+
+          <label>
+            Duração (min)
+            <input type="number" id="duration" min="5" max="300" required />
+          </label>
+
+          <label>
+            Intensidade
+            <select id="intensity" required>
+              <option value="">Selecione</option>
+              <option>Leve</option>
+              <option>Moderada</option>
+              <option>Alta</option>
+            </select>
+          </label>
+
+          <label class="full">
+            Observações
+            <textarea id="notes" rows="3" placeholder="Ex.: foco em pernas, boa disposição"></textarea>
+          </label>
+
+          <button type="submit">Salvar treino</button>
+        </form>
+      </section>
+
+      <section class="stats" aria-label="Resumo dos treinos">
+        <article class="stat">
+          <span>Total de sessões</span>
+          <strong id="total-sessions">0</strong>
+        </article>
+        <article class="stat">
+          <span>Total de minutos</span>
+          <strong id="total-minutes">0</strong>
+        </article>
+        <article class="stat">
+          <span>Tipo mais frequente</span>
+          <strong id="top-type">-</strong>
+        </article>
+      </section>
+
+      <section class="card">
+        <div class="list-header">
+          <h2>Histórico</h2>
+          <button id="clear-all" class="danger" type="button">Limpar tudo</button>
+        </div>
+        <ul id="training-list" class="training-list"></ul>
+      </section>
+    </main>
+
+    <template id="item-template">
+      <li class="training-item">
+        <div>
+          <strong class="item-title"></strong>
+          <p class="item-subtitle"></p>
+          <p class="item-notes"></p>
+        </div>
+        <button class="remove" type="button">Remover</button>
+      </li>
+    </template>
+
+    <script src="script.js"></script>
+  </body>
+</html>
