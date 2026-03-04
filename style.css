@@ -1,0 +1,149 @@
+:root {
+  color-scheme: light;
+  --bg: #f4f7fb;
+  --card: #fff;
+  --primary: #3563e9;
+  --primary-hover: #234ecb;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+  --danger: #dc2626;
+  --success: #15803d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.app-shell {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 1rem 2rem;
+}
+
+.brand-header {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.brand-header h1 {
+  margin: 0;
+  color: var(--primary);
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.dashboard-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+input,
+select,
+textarea,
+button {
+  font: inherit;
+}
+
+input,
+select,
+textarea {
+  padding: 0.65rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+button {
+  border: none;
+  border-radius: 8px;
+  padding: 0.7rem 1rem;
+  background: var(--primary);
+  color: #fff;
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--primary-hover);
+}
+
+button.secondary {
+  background: #4b5563;
+}
+
+.grid-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.6rem;
+}
+
+.hint {
+  color: var(--muted);
+}
+
+.error {
+  color: var(--danger);
+  min-height: 1.2rem;
+}
+
+.success {
+  color: var(--success);
+  min-height: 1.2rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.workout-list {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.workout-card {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.8rem;
+}
+
+.workout-meta {
+  color: var(--muted);
+  margin-bottom: 0.5rem;
+}
+
+.workout-card a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+@media (min-width: 768px) {
+  .grid-form {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-form textarea,
+  .grid-form button,
+  #workout-student,
+  #workout-video {
+    grid-column: 1 / -1;
+  }
+}
