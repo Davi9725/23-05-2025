@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Life Balance | Gestão de Treinos</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="brand-header">
+        <h1>Life Balance</h1>
+        <p>Sistema de gestão de alunos e treinos</p>
+      </header>
+
+      <section id="login-screen" class="card">
+        <h2>Entrar no sistema</h2>
+        <form id="login-form">
+          <label for="login-type">Perfil</label>
+          <select id="login-type" required>
+            <option value="">Selecione</option>
+            <option value="professor">Professor</option>
+            <option value="aluno">Aluno</option>
+          </select>
+
+          <label for="username">Usuário</label>
+          <input id="username" type="text" required />
+
+          <label for="password">Senha</label>
+          <input id="password" type="password" required />
+
+          <button type="submit">Entrar</button>
+        </form>
+        <small class="hint"
+          >Exemplo professor: <strong>professor</strong> / <strong>1234</strong>.<br />
+          Exemplo aluno: <strong>aluno1</strong> / <strong>1234</strong>.</small
+        >
+        <p id="login-error" class="error"></p>
+      </section>
+
+      <section id="dashboard" class="hidden">
+        <div class="dashboard-head card">
+          <div>
+            <h2 id="welcome-title"></h2>
+            <p id="welcome-subtitle"></p>
+          </div>
+          <button id="logout-btn" class="secondary">Sair</button>
+        </div>
+
+        <section id="professor-panel" class="hidden">
+          <div class="card">
+            <h3>Cadastrar aluno</h3>
+            <form id="student-form" class="grid-form">
+              <input id="student-name" type="text" placeholder="Nome do aluno" required />
+              <input id="student-user" type="text" placeholder="Usuário" required />
+              <input id="student-pass" type="password" placeholder="Senha" required />
+              <button type="submit">Adicionar aluno</button>
+            </form>
+            <p id="student-feedback" class="success"></p>
+          </div>
+
+          <div class="card">
+            <h3>Incluir treino com vídeo</h3>
+            <form id="workout-form" class="grid-form">
+              <select id="workout-student" required></select>
+              <input id="workout-title" type="text" placeholder="Título do treino" required />
+              <textarea id="workout-description" rows="3" placeholder="Descrição" required></textarea>
+              <input id="workout-video" type="url" placeholder="Link do vídeo no YouTube" required />
+              <button type="submit">Salvar treino</button>
+            </form>
+            <p id="workout-feedback" class="success"></p>
+          </div>
+        </section>
+
+        <section class="card">
+          <h3>Treinos cadastrados</h3>
+          <div id="workout-list" class="workout-list"></div>
+        </section>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
